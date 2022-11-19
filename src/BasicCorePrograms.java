@@ -9,7 +9,8 @@ public class BasicCorePrograms {
         System.out.println("Welcome to Basic Core Programs!");
 
         BasicCorePrograms bcpObj = new BasicCorePrograms();
-        bcpObj.isHead();
+        //bcpObj.isHead();
+        bcpObj.checkLeapYear();
     }
 
     public void isHead () {
@@ -34,5 +35,25 @@ public class BasicCorePrograms {
 
     public int getPercentage (double count, double total) {
         return (int) ((count / total) * 100);
+    }
+
+    public void checkLeapYear () {
+        System.out.println("Enter Year to check Leap or not : ");
+        int year = scnr.nextInt();
+        int temp = year;
+        int count = 0;
+
+        while (temp != 0) {
+            temp = temp /10;
+            count++;
+        }
+        if (count == 4) {
+            System.out.println("Year : " + year);
+            if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) {
+                System.out.println("Entered year i.e : " + year + " is a Leap year" );
+            } else
+                System.out.println("Entered year i.e : " + year + " is Not a Leap year" );
+        } else
+            System.out.println("Please enter a 4 digit number!");
     }
 }
