@@ -12,6 +12,7 @@ public class BasicCorePrograms {
     static final int QUOTIENT_AND_REMAINDER = 6;
     static final int SWAPPING_OF_TWO_NUMBERS = 7;
     static final int EVEN_OR_ODD = 8;
+    static final int VOWEL_OR_CONSONANT = 9;
 
     public static void main(String[] args) {
         System.out.println("Welcome to Basic Core Programs!");
@@ -23,7 +24,8 @@ public class BasicCorePrograms {
                 5. Find Prime Factors
                 6. Find Quotient and Remainder
                 7. Swapping of Two numbers
-                8. Check Even or Odd""");
+                8. Check Even or Odd
+                9. Check Vowel or Consonant""");
         System.out.print("Enter which function you want to call : " );
 
         BasicCorePrograms bcpObj = new BasicCorePrograms();
@@ -45,6 +47,8 @@ public class BasicCorePrograms {
                 bcpObj.swappingOfTwoNumbers();
             case EVEN_OR_ODD ->
                 bcpObj.checkEvenOrOdd();
+            case VOWEL_OR_CONSONANT ->
+                bcpObj.checkVowelOrConsonant();
             default ->
                     System.out.println("Wrong Choice");
         }
@@ -170,6 +174,33 @@ public class BasicCorePrograms {
         } else {
             System.out.println("Number is Odd");
         }
+    }
 
+    public void checkVowelOrConsonant () {
+        System.out.print("Enter Alphabet to check whether it is Vowel or Consonant : ");
+        char userInput = scnr.next().charAt(0);
+        userInput = Character.toLowerCase(userInput);
+        String isVowel;
+
+        switch (userInput) {
+            case 'a' ->
+                isVowel = "true";
+            case 'e' ->
+                isVowel = "true";
+            case 'i' ->
+                isVowel = "true";
+            case 'o' ->
+                isVowel = "true";
+            case 'u' ->
+                isVowel = "true";
+            default ->
+                isVowel = "false";
+        }
+
+        if (isVowel.equals("true")) {
+            System.out.println("It is a Vowel");
+        } else {
+            System.out.println("It is a Consonant");
+        }
     }
 }
