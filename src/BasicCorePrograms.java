@@ -8,10 +8,16 @@ public class BasicCorePrograms {
     static final int CHECK_LEAP_YEAR = 2;
     static final int POWER_OF_TWO = 3;
     static final int HARMONIC_NUMBER = 4;
+    static final int PRIME_FACTORS = 5;
 
     public static void main(String[] args) {
         System.out.println("Welcome to Basic Core Programs!");
-        System.out.println("1. Find Heads or Tails\n2. Check Leap Year\n3. Power of Two\n4. Find Nth Harmonic Number");
+        System.out.println("""
+                1. Find Heads or Tails
+                2. Check Leap Year
+                3. Power of Two
+                4. Find Nth Harmonic Number
+                5. Find Prime Factors""");
         System.out.println("Enter which function you want to call : " );
 
         BasicCorePrograms bcpObj = new BasicCorePrograms();
@@ -25,6 +31,8 @@ public class BasicCorePrograms {
                 bcpObj.powerOFTwo();
             case HARMONIC_NUMBER ->
                 bcpObj.findHarmonicValue();
+            case PRIME_FACTORS ->
+                bcpObj.findPrimeFactors();
             default ->
                     System.out.println("Wrong Choice");
         }
@@ -98,6 +106,20 @@ public class BasicCorePrograms {
             System.out.println(userInput + "th" + " Harmonic Value is : " + harmonicNumber);
         } else {
             System.out.println("Please enter positive numbers only.");
+        }
+    }
+
+    public void findPrimeFactors () {
+        System.out.println("Enter number to get its Prime Factors : " );
+        int userInput = scnr.nextInt();
+        System.out.print("Prime factors of " + userInput + " are : " );
+
+        for (int i = 2; i*i <= userInput; i++) {
+            while (userInput % i == 0) {
+                System.out.print(i + " ");
+                userInput = userInput / i;
+            }
+            System.out.println(userInput);
         }
     }
 }
