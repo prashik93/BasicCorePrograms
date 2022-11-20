@@ -13,6 +13,7 @@ public class BasicCorePrograms {
     static final int SWAPPING_OF_TWO_NUMBERS = 7;
     static final int EVEN_OR_ODD = 8;
     static final int VOWEL_OR_CONSONANT = 9;
+    static final int LARGEST_AMONG_THREE = 10;
 
     public static void main(String[] args) {
         System.out.println("Welcome to Basic Core Programs!");
@@ -25,7 +26,8 @@ public class BasicCorePrograms {
                 6. Find Quotient and Remainder
                 7. Swapping of Two numbers
                 8. Check Even or Odd
-                9. Check Vowel or Consonant""");
+                9. Check Vowel or Consonant
+                10. Find Largest among three numbers""");
         System.out.print("Enter which function you want to call : " );
 
         BasicCorePrograms bcpObj = new BasicCorePrograms();
@@ -49,6 +51,8 @@ public class BasicCorePrograms {
                 bcpObj.checkEvenOrOdd();
             case VOWEL_OR_CONSONANT ->
                 bcpObj.checkVowelOrConsonant();
+            case LARGEST_AMONG_THREE ->
+                bcpObj.findLargestAmongThree();
             default ->
                     System.out.println("Wrong Choice");
         }
@@ -202,5 +206,19 @@ public class BasicCorePrograms {
         } else {
             System.out.println("It is a Consonant");
         }
+    }
+
+    public void findLargestAmongThree () {
+        System.out.print("Enter three numbers : ");
+        int num1 = scnr.nextInt();
+        int num2 = scnr.nextInt();
+        int num3 = scnr.nextInt();
+
+        if (num1 >= num2 && num1 >= num3) {
+            System.out.println("The largest number is : " + num1);
+        } else if (num2 >= num1 && num2 > num3) {
+            System.out.println("The largest number is : " + num2);
+        } else
+            System.out.println("The largest number is : " + num3);
     }
 }
