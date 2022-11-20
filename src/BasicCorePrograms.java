@@ -9,6 +9,7 @@ public class BasicCorePrograms {
     static final int POWER_OF_TWO = 3;
     static final int HARMONIC_NUMBER = 4;
     static final int PRIME_FACTORS = 5;
+    static final int QUOTIENT_AND_REMAINDER = 6;
 
     public static void main(String[] args) {
         System.out.println("Welcome to Basic Core Programs!");
@@ -17,7 +18,8 @@ public class BasicCorePrograms {
                 2. Check Leap Year
                 3. Power of Two
                 4. Find Nth Harmonic Number
-                5. Find Prime Factors""");
+                5. Find Prime Factors
+                6. Find Quotient and Remainder""");
         System.out.println("Enter which function you want to call : " );
 
         BasicCorePrograms bcpObj = new BasicCorePrograms();
@@ -33,6 +35,8 @@ public class BasicCorePrograms {
                 bcpObj.findHarmonicValue();
             case PRIME_FACTORS ->
                 bcpObj.findPrimeFactors();
+            case QUOTIENT_AND_REMAINDER ->
+                bcpObj.computeQuotientAndRemainder();
             default ->
                     System.out.println("Wrong Choice");
         }
@@ -121,5 +125,15 @@ public class BasicCorePrograms {
             }
             System.out.println(userInput);
         }
+    }
+
+    public void computeQuotientAndRemainder () {
+        System.out.print("Enter Dividend and Divisor : ");
+        int dividend = scnr.nextInt();
+        int divisor = scnr.nextInt();
+        int quotient = dividend / divisor;
+        int remainder = dividend - (divisor * quotient);
+        System.out.println("Quotient is : " + quotient);
+        System.out.println("Remainder is : " + remainder);
     }
 }
