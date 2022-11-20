@@ -10,6 +10,7 @@ public class BasicCorePrograms {
     static final int HARMONIC_NUMBER = 4;
     static final int PRIME_FACTORS = 5;
     static final int QUOTIENT_AND_REMAINDER = 6;
+    static final int SWAPPING_OF_TWO_NUMBERS = 7;
 
     public static void main(String[] args) {
         System.out.println("Welcome to Basic Core Programs!");
@@ -19,8 +20,9 @@ public class BasicCorePrograms {
                 3. Power of Two
                 4. Find Nth Harmonic Number
                 5. Find Prime Factors
-                6. Find Quotient and Remainder""");
-        System.out.println("Enter which function you want to call : " );
+                6. Find Quotient and Remainder
+                7. Swapping of Two numbers""");
+        System.out.print("Enter which function you want to call : " );
 
         BasicCorePrograms bcpObj = new BasicCorePrograms();
         int userChoice = scnr.nextInt();
@@ -37,6 +39,8 @@ public class BasicCorePrograms {
                 bcpObj.findPrimeFactors();
             case QUOTIENT_AND_REMAINDER ->
                 bcpObj.computeQuotientAndRemainder();
+            case SWAPPING_OF_TWO_NUMBERS ->
+                bcpObj.swappingOfTwoNumbers();
             default ->
                     System.out.println("Wrong Choice");
         }
@@ -135,5 +139,21 @@ public class BasicCorePrograms {
         int remainder = dividend - (divisor * quotient);
         System.out.println("Quotient is : " + quotient);
         System.out.println("Remainder is : " + remainder);
+    }
+
+    public void swappingOfTwoNumbers () {
+        System.out.println("Enter Two numbers : ");
+        int firstNum = scnr.nextInt();
+        int secNum = scnr.nextInt();
+        System.out.println("Before Swapping ------ ");
+        System.out.println("First Number is : " + firstNum);
+        System.out.println("Second Number is : " + secNum + " \n ");
+        int temp = 0;
+        temp = firstNum;
+        firstNum = secNum;
+        secNum = temp;
+        System.out.println("After Swapping ------ ");
+        System.out.println("First Number is : " + firstNum);
+        System.out.println("Second Number is : " + secNum);
     }
 }
