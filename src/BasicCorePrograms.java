@@ -11,6 +11,7 @@ public class BasicCorePrograms {
     static final int PRIME_FACTORS = 5;
     static final int QUOTIENT_AND_REMAINDER = 6;
     static final int SWAPPING_OF_TWO_NUMBERS = 7;
+    static final int EVEN_OR_ODD = 8;
 
     public static void main(String[] args) {
         System.out.println("Welcome to Basic Core Programs!");
@@ -21,7 +22,8 @@ public class BasicCorePrograms {
                 4. Find Nth Harmonic Number
                 5. Find Prime Factors
                 6. Find Quotient and Remainder
-                7. Swapping of Two numbers""");
+                7. Swapping of Two numbers
+                8. Check Even or Odd""");
         System.out.print("Enter which function you want to call : " );
 
         BasicCorePrograms bcpObj = new BasicCorePrograms();
@@ -41,6 +43,8 @@ public class BasicCorePrograms {
                 bcpObj.computeQuotientAndRemainder();
             case SWAPPING_OF_TWO_NUMBERS ->
                 bcpObj.swappingOfTwoNumbers();
+            case EVEN_OR_ODD ->
+                bcpObj.checkEvenOrOdd();
             default ->
                     System.out.println("Wrong Choice");
         }
@@ -155,5 +159,17 @@ public class BasicCorePrograms {
         System.out.println("After Swapping ------ ");
         System.out.println("First Number is : " + firstNum);
         System.out.println("Second Number is : " + secNum);
+    }
+
+    public void checkEvenOrOdd () {
+        System.out.println("Enter number to check it is Even or Odd : ");
+        int userInput = scnr.nextInt();
+
+        if (userInput % 2 == 0) {
+            System.out.println("Number is Even");
+        } else {
+            System.out.println("Number is Odd");
+        }
+
     }
 }
